@@ -2,26 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base{
+  body{
+    @apply bg-gray-100;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+@layer components{
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+  .sidebarButton {
+    @apply dark:border-t border-gray-600 py-3 px-4 cursor-pointer opacity-80 hover:opacity-100;
+  }
+
+  .sidebarLink {
+    @apply text-[13px] font-medium text-blue-500 hover:underline cursor-pointer px-2.5;
+  }
+
+  .inputButton {
+    @apply flex items-center space-x-2 font-medium cursor-pointer text-sm;
+  }
+
+  .postButton {
+    @apply flex items-center justify-center space-x-2 cursor-pointer hover:bg-black/10 dark:hover:bg-black/20 w-full py-2.5 rounded transition ease-out font-medium;
+  }
+  .intent{
+    @apply flex justify-between items-center hover:shadow-xl p-4 cursor-pointer rounded-lg text-black bg-white max-w-md mx-auto xl:mx-0; 
+
   }
 }
