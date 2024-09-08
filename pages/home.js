@@ -13,14 +13,14 @@ function Home({providers})
         <div className="space-y-10 relative">
             <Head>
                 <title>
-                    LinkedIn
+                    Gap Stealers
                 </title>
                 <meta name="Description" content="Generated bt create next"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <header className="flex justify-around items-center py-4 mx-auto">  
-                <div className="relative w-36 h-10">
-                    <Image src="https://rb.gy/vtbzlp" layout="fill" objectFit="contain" />   
+                <div className="relative w-40 h-10">
+                    <img src="https://i.ibb.co/bN8QT2Y/full-logo.jpg" layout="fill" objectFit="contain" />   
                 </div>
                 <div className="flex-items-center sm:divide-x divide-gray-300 sm:flex">
                     <div className="hidden sm:flex space-x-8 pr-4">
