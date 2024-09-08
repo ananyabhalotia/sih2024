@@ -35,9 +35,9 @@ function Header()
                 {mounted && (
                     <>
                     {resolvedTheme === "dark" ? (
-                    <Image src="https://rb.gy/bizvqj" width={45} height={45} />
+                    <img src="https://i.ibb.co/nmybyDh/logo-white.jpg" alt="logo" width={45} height={45} />
                     ) : (
-                    <Image src="https://rb.gy/dpmd9s" width={55} height={55} />
+                    <img src="https://i.ibb.co/99xkW82/logo-normal.jpg" alt="logo" width={45} height={45}/>
                     )}
                 </>
                 )}
