@@ -18,12 +18,15 @@ export const heroTextureImports = importAll(
 
 const MainCarousel = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
+
   return (
     <Carousel
       infiniteLoop={true}
       showThumbs={false}
       showIndicators={false}
       showStatus={false}
+      autoPlay={true}
+      interval={2000} // Increased time interval for smoother experience
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
         <IconButton
           onClick={onClickHandler}
@@ -34,6 +37,10 @@ const MainCarousel = () => {
             color: "white",
             padding: "5px",
             zIndex: "10",
+            "&:hover": {
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              transition: "0.3s",
+            },
           }}
         >
           <NavigateBeforeIcon sx={{ fontSize: 40 }} />
@@ -49,6 +56,10 @@ const MainCarousel = () => {
             color: "white",
             padding: "5px",
             zIndex: "10",
+            "&:hover": {
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              transition: "0.3s",
+            },
           }}
         >
           <NavigateNextIcon sx={{ fontSize: 40 }} />
@@ -56,32 +67,45 @@ const MainCarousel = () => {
       )}
     >
       {Object.values(heroTextureImports).map((texture, index) => (
-        <Box key={`carousel-image-${index}`}>
+        <Box key={`carousel-image-${index}`} position="relative">
           <img
             src={texture}
             alt={`carousel-${index}`}
             style={{
               width: "100%",
-              height: "700px",
+              height: "600px",
               objectFit: "cover",
-              backgroundAttachment: "fixed",
+              filter: "brightness(90%)", // Subtle image enhancement
+              transition: "transform 1s ease-in-out",
+              marginTop:"20px"
             }}
           />
           <Box
             color="white"
-            padding="20px"
-            borderRadius="1px"
+            padding="40px"
+            borderRadius="8px"
             textAlign="left"
-            backgroundColor="rgb(0, 0, 0, 0.4)"
+            backgroundColor="rgba(0, 0, 0, 0.6)" // Enhanced opacity for clearer text visibility
+            boxShadow="0 4px 8px rgba(0, 0, 0, 0.2)" // Soft shadow for elevation
             position="absolute"
             top="46%"
             left={isNonMobile ? "10%" : "0"}
             right={isNonMobile ? undefined : "0"}
             margin={isNonMobile ? undefined : "0 auto"}
-            maxWidth={isNonMobile ? undefined : "240px"}
+            maxWidth={isNonMobile ? "500px" : "240px"} // Adjusted text box width
           >
-            <Typography color={shades.secondary[200]}>-- NEW JOBS</Typography>
-            <Typography variant="h1">Apply fast</Typography>
+            <Typography color={shades.secondary[200]} fontSize={14}>
+              -- NEW JOBS
+            </Typography>
+            <Typography
+              fontFamily="Cinzel" // Updated font for modern look
+              fontSize={36}
+             
+              color="#F0F0F0"
+              mb={2} // Margin bottom for spacing
+            >
+              Apply fast
+            </Typography>
             <Typography
               fontWeight="bold"
               color={shades.secondary[300]}

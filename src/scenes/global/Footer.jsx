@@ -31,7 +31,6 @@ function Footer() {
           </Typography>
           <div>
             Stealing gap and bridging opportunities.
-            bla bla bla bla
           </div>
         </Box>
 

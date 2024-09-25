@@ -1,6 +1,15 @@
 import React from 'react';
-import { Box, Typography, Container } from '@mui/material';
+import { Box, Typography, Container, Grid, Avatar } from '@mui/material';
 import { shades } from "../../theme";
+
+const creators = [
+  { name: 'Ananya Bhalotia', image: '/ananya.jpg' },
+  { name: 'Tushar Noonia', image: '/tushar.jpg' },
+  { name: 'Yashovardhan', image: '/yash.jpg' },
+  { name: 'Utkarsh Pandey', image: '/utkarsh.jpg' },
+  { name: 'Ishita Khare', image: '/ishita.jpg' },
+  { name: 'Aryan Kumar Singh', image: '/aryan.jpg' },
+];
 
 const About = () => {
   return (
@@ -27,6 +36,30 @@ const About = () => {
         <Typography variant="h6" paragraph>
           Thank you for visiting our site. We look forward to helping you find the perfect match and supporting the growth of small-time workers.
         </Typography>
+        
+        {/* Images section */}
+        <Box sx={{ marginTop: '40px' }}>
+          <Typography variant="h4" gutterBottom>
+            Meet the Creators
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {creators.map((creator, index) => (
+              <Grid item key={index} xs={6} sm={4} md={2} textAlign="center">
+                <Avatar
+                  src={creator.image}
+                  alt={creator.name}
+                  sx={{
+                    width: 100,
+                    height: 100,
+                    margin: '0 auto',
+                    mb: 2,
+                  }}
+                />
+                <Typography variant="h6">{creator.name}</Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </Box>
     </Container>
   );

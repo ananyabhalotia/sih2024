@@ -21,8 +21,8 @@ const CCForm = () => {
 
     emailjs
       .send(
-        'service_164w1of',
-        'template_u6d5oo7',
+        'service_eg0d54w',
+        'template_5t7p52z',
         {
             firstName: formData.firstName,
             lastName: formData.lastName,
@@ -30,7 +30,7 @@ const CCForm = () => {
             problemDescription: formData.problemDescription,
             email: formData.email,
         },
-        'gbmFQgazZ8GEgOlq_'
+        'r3k8fdsQhvDYWwPNh'
       )
       .then(
         (response) => {

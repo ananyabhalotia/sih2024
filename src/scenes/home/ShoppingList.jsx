@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 //import Box from "@mui/material/Box";
 import Item from "../../components/Item";
 import {Box,Tab,Tabs,Typography,useMediaQuery } from "@mui/material";
+
 //import useMediaQuery from "@mui/material/useMediaQuery";
 import { useDispatch, useSelector } from "react-redux";
 import { setItems } from "../../state";
@@ -69,30 +70,35 @@ const ShoppingList = () => {
         <Tab label="UNSKILLED" value="topRated" />
       </Tabs>
       <Box
-        margin="0 auto"
-        display="grid"
-        gridTemplateColumns="repeat(auto-fill, 300px)"
-        justifyContent="space-around"
-        rowGap="25px"
-        columnGap="4%"
-      >
-        {value === "all" &&
-          items.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-        {value === "newArrivals" &&
-          newArrivalsItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-        {value === "bestSellers" &&
-          bestSellersItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-        {value === "topRated" &&
-          topRatedItems.map((item) => (
-            <Item item={item} key={`${item.name}-${item.id}`} />
-          ))}
-      </Box>
+  margin="0 auto"
+  display="grid"
+  gridTemplateColumns="repeat(auto-fill, 300px)"
+  justifyContent="space-around"
+  rowGap="25px"
+  columnGap="4%"
+  color="gray"
+  border="2px"
+        
+>
+  {value === "all" &&
+    items.map((item) => {
+      console.log(item); // Check the structure of the item
+      return <Item item={item} key={`${item.attributes.name || 'default'}-${item.id}`} />;
+    })}
+  {value === "newArrivals" &&
+    newArrivalsItems.map((item) => (
+      <Item item={item} key={`${item.attributes.name || 'default'}-${item.id}`} />
+    ))}
+  {value === "bestSellers" &&
+    bestSellersItems.map((item) => (
+      <Item item={item} key={`${item.attributes.name || 'default'}-${item.id}`} />
+    ))}
+  {value === "topRated" &&
+    topRatedItems.map((item) => (
+      <Item item={item} key={`${item.attributes.name || 'default'}-${item.id}`} />
+    ))}
+</Box>
+
     </Box>
   );
   
