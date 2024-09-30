@@ -34,7 +34,7 @@ function App() {
         
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="item/:itemId" element={<ItemDetails />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Confirmation />} />
@@ -42,7 +42,7 @@ function App() {
           <Route path="/about-us" element={<About />} />
           <Route path="/terms-and-conditions" element={<Terms />} />
           <Route path="/thank-you-page" element={<ThankYouPage />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/search" element={<SearchResult/>} />  
         </Routes>
         <CartMenu />

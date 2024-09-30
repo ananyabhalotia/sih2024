@@ -51,7 +51,7 @@ const Navbar = () => {
       >
         {/* Logo Section */}
         <Box
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/home")}
           sx={{
             "&:hover": { cursor: "pointer", color: shades.primary[500] },
             transition: "color 0.3s ease",
